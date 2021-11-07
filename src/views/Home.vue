@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <div class="container">
+    <div class="cover">
+      <img class="cover-image" alt="golden eclipse" :src="cover">
+    </div>
   </div>
+  <h1>golden eclipse</h1>
+</div>
+
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      cover: require('/images/box_rings.jpg')
+    }
+  },
 }
 </script>
+
+<style>
+.container {
+ display: flex;
+ width: 80%;
+ margin: 0 auto;
+}
+
+.cover {
+  max-width:100%;
+  max-height:100%;
+}
+
+.cover-image {
+  width: 100%;
+}
+
+</style>
