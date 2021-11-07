@@ -5,6 +5,10 @@
       <img class="cover-image" alt="golden eclipse products" :src="cover">
     </div>
   </div>
+  <div class="materials">
+    <button class="select-material" @click="select('gold')">gold</button>
+    <button class="select-material" @click="select('silver')">silver</button>
+  </div>
   <Products :products="products" />
 </div>
 </template>
@@ -18,15 +22,20 @@ export default {
   },
   data() {
     return {
-      searchText: '',
+      material: '',
       cover: require('/images/box_rings.jpg')
     }
   },
   computed: {
     products() {
-      return this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText.toLowerCase()) >= 0);
+      return this.$root.$data.products.filter(product => product.material === this.material);
     }
   },
+  methods: {
+    select(material) {
+      this.material = material;
+    }
+  }
 }
 </script>
 
@@ -45,4 +54,27 @@ export default {
 .cover-image {
   width: 100%;
 }
+
+.materials {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.select-material {
+  width: 45%;
+  text-align: center;
+  padding: 5px;
+  background: #F9AB69;
+  border: none;
+  color: black;
+  font-weight: bold;
+}
+
+.select-material:hover {
+  background-color: #E3BF6A;
+  color: #664A0E;
+}
+
 </style>

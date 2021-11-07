@@ -36,7 +36,7 @@ let products = [
     name: "hammered silver",
     price: "$29",
     image: 'thick_silver.jpg',
-    material: 'gold',
+    material: 'silver',
     qty: 0,
   },
 ]
