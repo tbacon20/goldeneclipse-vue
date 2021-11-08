@@ -3,10 +3,6 @@
   <div class="products">
     <div class="product" v-for="product in products" :key="product.id">
 
-    <div v-if="product.qty == 0">
-    </div>
-    <div v-else>
-
     <div class="info">
       <h1>{{product.name}} - <i>{{product.price}}</i></h1>
     </div>
@@ -17,8 +13,6 @@
       <button class="auto" @click="minus(product)"><b>-</b></button>
       <span class="qty">{{product.qty}}</span>
       <button class="auto" @click="plus(product)"><b>+</b></button>
-    </div>
-
     </div>
 
     </div>

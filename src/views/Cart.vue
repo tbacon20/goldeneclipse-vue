@@ -19,13 +19,12 @@ export default {
   },
   data() {
     return {
-      searchText: '',
       cover: require('/images/shop_rings.jpg')
     }
   },
   computed: {
     products() {
-      return this.$root.$data.products.filter(product => product.name.toLowerCase().search(this.searchText.toLowerCase()) >= 0);
+      return this.$root.$data.products.filter(product => product.qty != 0);
     }
   },
 }

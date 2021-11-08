@@ -6,8 +6,8 @@
     </div>
   </div>
   <div class="materials">
-    <button class="select-material" @click="select('gold')">gold</button>
-    <button class="select-material" @click="select('silver')">silver</button>
+    <button class="select-material" @click="select('gold')">shop gold</button>
+    <button class="select-material" @click="select('silver')">shop silver</button>
   </div>
   <Products :products="products" />
 </div>
@@ -47,12 +47,12 @@ export default {
 }
 
 .cover {
-  max-width:100%;
-  max-height:100%;
+
 }
 
 .cover-image {
   width: 100%;
+  object-fit: cover;
 }
 
 .materials {
